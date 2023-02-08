@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+{% block content%}
+{% load static %}
+{% if images|length > 0 %}
+<table>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>View</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    {% for image in images %}
+    <tr>
+        <td>{{image.name}}</td>
+        <td>{{image.description}}</td>
+        <td><a href="{% url 'image' image.id %}">View</a></td>
+        <td><a href="{% url 'update-image' image.id %}">Edit</a></td>
+        <td><a href="{% url 'delete-image' image.id %}">Delete</a></td>
+      </tr>
+{% endfor %}
+  </table>
+{% else %}
+<h1>There are no images yet</h1>
+{% endif %}
+<a href="{% url 'create-image' %}">Create Image</a>
+{% endblock content %}

@@ -1,0 +1,4 @@
+db.sqlite3
+imaginerium/__pycache__
+images/__pycache__
+images/migrations/__pycache__

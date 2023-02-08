@@ -1,0 +1,10 @@
+{% extends 'main.html' %}
+{% block content%}
+<p>This is the single image page!</p>
+<p>Title :: {{image.name}}</p>
+<p>Description :: {{image.description}}</p>
+<p>Created @ :: {{image.created}}</p>
+
+<img style="max-width: 500px" src="{{ image.image.url }}">
+
+{% endblock content %}
